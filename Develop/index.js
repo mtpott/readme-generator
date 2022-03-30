@@ -1,26 +1,35 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const writeToFile = require('./utils/generateMarkdown.js');
 
-const titlePrompt = () => {
-
+function projectInput(projectData) {
     return inquirer.prompt([
         {
             type: 'input',
             name: 'title',
-            message: 'what is the title of your project?'
-        }
-    ])
-    .then(answers => console.log(answers))
-    .then(projectInput);
-}
-
-const projectInput = () => {
-    return inquirer.prompt([
+            message: 'what is the title of your project? (required)',
+            validate: readmeName => {
+                if (readmeName) {
+                    return true;
+                } else {
+                    console.log('please enter the title of your project.');
+                    return false;
+                }
+            }
+        },
         {
             type: 'input',
             name: 'description',
-            message: 'please enter a description for your project:'
+            message: 'please enter a description for your project (required):',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('please enter a description for your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
@@ -31,22 +40,45 @@ const projectInput = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'please enter instructions for the installation of your project:'
+            message: 'please enter instructions for the installation of your project (required):',
+            validate: installationInput => {
+                if (installationInput) {
+                    return true;
+                } else {
+                    console.log('please enter the instructions for the installation of your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'please enter usage information:'
+            message: 'please enter usage information (required):',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('please enter the usage information.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'test',
-            message: 'please enter instructions for testing your project:'
+            message: 'please enter instructions for testing your project (required):',
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('please enter the instructions for testing your project.');
+                    return false;
+                }
+            }
         }
     ])
-    .then(answers => console.log(answers))
     .then(githubPrompt);
-}
+};
 
 const githubPrompt = () => {
     return inquirer.prompt([
@@ -59,38 +91,34 @@ const githubPrompt = () => {
             type: 'input',
             name: 'profile',
             message: 'please provide a link to your github profile:'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'please enter your email address:'
         }
     ])
-    .then(answers => console.log(answers))
 }
-titlePrompt();
+projectInput()
+    .then(readMeData => {
+        return writeToFile(readMeData);
+    })
+    .then(readMeResponse => {
+        console.log(readMeResponse)
+        return;
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 // TODO: Create an array of questions for user input
 const questions = [];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
-
-
-//README should explain what the application does and why you
-//used the technologies you did. at bare minimum, it needs a
-//title and a short description explaining the what, why, and
-//how of the project
-
-//may also include the challenges faced and features planned to
-//be added in the future
-
-//WHAT WAS YOUR MOTIVATION?
-//WHY DID YOU BUILD THIS PROJECT?
-//WHAT PROBLEM DOES IT SOLVE?
-//WHAT DID YOU LEARN?
-//WHAT MAKES YOUR PROJECT STAND OUT?
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
