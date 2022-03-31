@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const writeToFile = require('./utils/generateMarkdown.js');
+const { writeToFile, copyFile } = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./src/readme-template');
 
 // function projectInput(projectData) {
 //     return inquirer.prompt([
@@ -36,7 +37,7 @@ const questions = [
             type: 'checkbox',
             name: 'technologies',
             message: 'what technologies did you use for this project? check all that apply.',
-            choices: ['JavaScript', 'HTML', 'CSS', 'Node']
+            choices: ['JavaScript', 'HTML', 'CSS', 'ES5', 'ES6', 'jQuery', 'Node']
         },
         {
             type: 'input',
@@ -92,11 +93,6 @@ const questions = [
         },
         {
             type: 'input',
-            name: 'username',
-            message: 'please enter your github username:'
-        },
-        {
-            type: 'input',
             name: 'profile',
             message: 'please provide a link to your github profile:'
         },
@@ -115,12 +111,15 @@ const questions = [
 
 
 inquirer.prompt(questions)
-    .then(projectData => {
-        return writeToFile(projectData);
+    .then(response => {
+        console.log(response);
     })
-    .then(readMeResponse => {
-        console.log(readMeResponse)
-        return;
+    .then(response => {
+        return writeToFile(response);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+        return copyFile();
     })
     .catch(err => {
         console.log(err);
