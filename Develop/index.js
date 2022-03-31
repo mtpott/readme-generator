@@ -66,6 +66,19 @@ const questions = [
         },
         {
             type: 'input',
+            name: 'contributing',
+            message: 'please enter information regarding the contributing guidelines for your projec:',
+            validate: contributingInput => {
+                if (contributingInput) {
+                    return true;
+                } else {
+                    console.log('please enter information for contributing guidelines.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'test',
             message: 'please enter instructions for testing your project (required):',
             validate: testingInput => {
@@ -91,17 +104,16 @@ const questions = [
             type: 'input',
             name: 'email',
             message: 'please enter your email address:'
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'choose a license to add to your project:',
+            choices: ['MIT', 'GPLv2', 'Apache']
         }
-//     ])
-// };
     ];
 
-// const githubPrompt = () => {
-//     return inquirer.prompt([
-//     ])
-// }
-//projectInput()
-    // .then(githubPrompt)
+
 inquirer.prompt(questions)
     .then(projectData => {
         return writeToFile(projectData);
