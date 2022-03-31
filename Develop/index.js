@@ -3,8 +3,9 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const writeToFile = require('./utils/generateMarkdown.js');
 
-function projectInput(projectData) {
-    return inquirer.prompt([
+// function projectInput(projectData) {
+//     return inquirer.prompt([
+const questions = [
         {
             type: 'input',
             name: 'title',
@@ -75,13 +76,7 @@ function projectInput(projectData) {
                     return false;
                 }
             }
-        }
-    ])
-    .then(githubPrompt);
-};
-
-const githubPrompt = () => {
-    return inquirer.prompt([
+        },
         {
             type: 'input',
             name: 'username',
@@ -97,11 +92,19 @@ const githubPrompt = () => {
             name: 'email',
             message: 'please enter your email address:'
         }
-    ])
-}
-projectInput()
-    .then(readMeData => {
-        return writeToFile(readMeData);
+//     ])
+// };
+    ];
+
+// const githubPrompt = () => {
+//     return inquirer.prompt([
+//     ])
+// }
+//projectInput()
+    // .then(githubPrompt)
+inquirer.prompt(questions)
+    .then(projectData => {
+        return writeToFile(projectData);
     })
     .then(readMeResponse => {
         console.log(readMeResponse)
@@ -112,7 +115,7 @@ projectInput()
     });
 
 // TODO: Create an array of questions for user input
-const questions = [];
+//const questions = [];
 
 // TODO: Create a function to initialize app
 function init() {}
