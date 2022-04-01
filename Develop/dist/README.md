@@ -1,7 +1,5 @@
 
-# README Generator
-
-## License
+# readme
 
 ## Table of Contents
 ### -[Licensing](#license)
@@ -12,8 +10,17 @@
 ### -[Testing](#test)
 ### -[Questions](#email)
 
+## License
+MIT
+ 
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    
+ 
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    
+
 ## Description
-Generate professional-quality README.md files for all your upcoming projects!
+generate
   
 ## Installation
 ### Instructions for Project Installation:
@@ -21,15 +28,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum
   
 ## Technologies
 ### Built With:
-JavaScript, ES5, ES6, Node
+JavaScript, HTML, CSS, ES5, ES6, jQuery, Node
 
 ## Usage
 ### Information Regarding Project Usage:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.
 
 ## Contributing Guidelines
 ### Information Regarding Contributing Guidelines:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum, accumsan a mi ac, dictum efficitur urna.
   
 ## Testing
 ### Information Regarding Testing for this Project:
@@ -37,5 +44,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse magna ipsum
   
 ## Questions
 ### For any questions or concerns please contact me at
-Github: undefined
+Github: https://github.com/mtpott
 Email: mtpott23@gmail.com

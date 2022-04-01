@@ -1,8 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    const licenseType = license;
-    const addLicense = '';
+    let licenseType = license;
+    let addLicense = '';
     if (licenseType === 'MIT') {
       addLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
     } else if (licenseType === 'GPLv2') {
@@ -12,13 +12,14 @@ function renderLicenseBadge(license) {
     } else {
       addLicense;
     }
+    return addLicense;
   };
   
   // TODO: Create a function that returns the license link
   // If there is no license, return an empty string
   function renderLicenseLink(license) {
-    const licenseLink = license;
-    const addLink = ''
+    let licenseLink = license;
+    let addLink = ''
     if (licenseLink === 'MIT') {
       addLink = 'https://api.github.com/licenses/mit';
     } else if (licenseLink === 'GPLv2') {
@@ -28,23 +29,23 @@ function renderLicenseBadge(license) {
     } else {
       addLink;
     }
+    return addLink;
   };
   
   // TODO: Create a function that returns the license section of README
   // If there is no license, return an empty string
   function renderLicenseSection(addLicense, addLink) {
     return ` 
-    ${renderLicenseBadge(addLicense)}`
+    ${renderLicenseBadge(addLicense)}
+    ${renderLicenseLink(addLink)}`
   }
   
   // TODO: Create a function to generate markdown for README
   
   module.exports = response => {
-    const { title, description, installation, technologies, usage, contributing, test, email, username } = {...response};
+    const { title, description, installation, technologies, usage, contributing, test, email, username, license } = {...response};
     return `
 # ${title}
-
-## License
 
 ## Table of Contents
 ### -[Licensing](#license)
@@ -54,6 +55,11 @@ function renderLicenseBadge(license) {
 ### -[Contributing Guidelines](#contributing)
 ### -[Testing](#test)
 ### -[Questions](#email)
+
+## License
+${response.license}
+${renderLicenseSection(response.license)}
+${renderLicenseSection(response.license)}
 
 ## Description
 ${response.description}
@@ -80,6 +86,6 @@ ${response.test}
   
 ## Questions
 ### For any questions or concerns please contact me at
-Github: ${response.username}
+Github: https://github.com/${response.username}
 Email: ${response.email}`
   }
