@@ -41,35 +41,43 @@ function renderLicenseBadge(license) {
   
   module.exports = response => {
     const { title, description, installation, technologies, usage, contributing, test, email, username } = {...response};
-    return `#${title}  
-##License
-##Table of Contents
-###-[Licensing](#license)
-###-[Installation](#installation)
-###-[Technologies](#technologies)
-###-[Usage](#usage)
-###-[Contributing Guidelines](#contributing)
-###-[Testing](#test)
-###-[Questions](#email)
-##Description
-${response.description}
-##Installation
-###Instructions for Project Installation:
-${response.installation}
-##Technologies
-###Built With:
-${response.technologies.join(', ')}
-##Usage<br>
-###Information Regarding Project Usage:<br>
-${response.usage}
-##Contributing Guidelines
-###Information Regarding Contributing Guidelines:
-${response.contributing}
-##Testing
-###Information Regarding Testing for this Project:
-${response.test}
-##Questions
-###For any questions or concerns please contact me at<br>
-Github: ${response.username}
+    return `#${title}
+
+##License\
+##Table of Contents\
+###-[Licensing](#license)\
+###-[Installation](#installation)\
+###-[Technologies](#technologies)\
+###-[Usage](#usage)\
+###-[Contributing Guidelines](#contributing)\
+###-[Testing](#test)\
+###-[Questions](#email)\
+
+##Description\
+${response.description}\
+
+##Installation\
+###Instructions for Project Installation:\
+${response.installation}\
+
+##Technologies\
+###Built With:\
+${response.technologies.join(', ')}\
+
+##Usage\
+###Information Regarding Project Usage:\
+${response.usage}\
+
+##Contributing Guidelines\
+###Information Regarding Contributing Guidelines:\
+${response.contributing}\
+
+##Testing\
+###Information Regarding Testing for this Project:\
+${response.test}\
+
+##Questions\
+###For any questions or concerns please contact me at\
+Github: ${response.username}\
 Email: ${response.email}`
   }
