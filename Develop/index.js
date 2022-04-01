@@ -1,7 +1,9 @@
+//required consts so everything works!
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./src/readme-template');
 
+//array of questions, invoked when prompted through the command line
 const questions = [
         {
             type: 'input',
@@ -101,11 +103,11 @@ const questions = [
             type: 'list',
             name: 'license',
             message: 'choose a license to add to your project:',
-            choices: ['MIT', 'GPLv2', 'Apache']
+            choices: ['MIT', 'GPLv2', 'Apache', 'None']
         }
     ];
 
-// TODO: Create a function to write README file
+//functions to write and read the README.md file
 function writeFile(response) {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/README.md', response.toString(), err => {
@@ -136,6 +138,7 @@ function writeFile(response) {
     });
   };
     
+//invokes inquirer.prompt and continues the Promise chain
 inquirer.prompt(questions)
     .then(response => {
         console.log(response);
@@ -151,14 +154,3 @@ inquirer.prompt(questions)
     .catch(err => {
         console.log(err);
     });
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and 
-//a notice is added to the section of the README entitled License that 
-//explains which license the application is covered under

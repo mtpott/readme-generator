@@ -9,7 +9,7 @@ function renderLicenseBadge(license) {
       addLicense = `[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
     } else if (licenseType === 'Apache') {
       addLicense = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-    } else {
+    } else if (licenseType === 'None') {
       addLicense;
     }
     return addLicense;
@@ -19,14 +19,14 @@ function renderLicenseBadge(license) {
   // If there is no license, return an empty string
   function renderLicenseLink(license) {
     let licenseLink = license;
-    let addLink = ''
+    let addLink = '';
     if (licenseLink === 'MIT') {
       addLink = 'https://api.github.com/licenses/mit';
     } else if (licenseLink === 'GPLv2') {
       addLink = 'https://api.github.com/licenses/gpl-2.0'
     } else if (licenseLink === 'Apache') {
       addLink = 'https://api.github.com/licenses/apache-2.0';
-    } else {
+    } else if (licenseLink === 'None') {
       addLink;
     }
     return addLink;
@@ -41,13 +41,13 @@ function renderLicenseBadge(license) {
 ${renderLicenseBadge(response.license)}
 
 ## Table of Contents
-### -[Licensing](#license)
 ### -[Installation](#installation)
 ### -[Technologies](#technologies)
 ### -[Usage](#usage)
 ### -[Contributing Guidelines](#contributing)
 ### -[Testing](#test)
 ### -[Questions](#email)
+### -[Licensing](#license)
 
 ## Description
 ${response.description}
