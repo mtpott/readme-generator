@@ -1,11 +1,7 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const  readFile  = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./src/readme-template');
 
-// function projectInput(projectData) {
-//     return inquirer.prompt([
 const questions = [
         {
             type: 'input',
@@ -112,7 +108,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeFile(response) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/README.md', questions.toString(), err => {
+        fs.writeFile('./dist/README.md', JSON.stringify(response), err => {
             if (err) {
                 reject(err);
                 return;
@@ -124,16 +120,34 @@ function writeFile(response) {
         });
     });
   };
+
+  function readFile() {
+    return new Promise((resolve, reject) => {
+      fs.readFile('./dist/README.md', (err, data) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve({
+          ok: true,
+          message: 'README created.'
+        });
+      });
+    });
+  };
     
 inquirer.prompt(questions)
     .then(response => {
         console.log(response);
-        return writeFile(response);
+        return generateMarkdown(response);
     })
-    //.then(writeFileResponse => {
-        //console.log(writeFileResponse);
-        //return readFile();
-    //})
+    .then(pageMd => {
+        return writeFile(pageMd);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+        return readFile();
+    })
     .catch(err => {
         console.log(err);
     });
