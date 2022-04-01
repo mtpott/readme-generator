@@ -32,20 +32,13 @@ function renderLicenseBadge(license) {
     return addLink;
   };
   
-  // TODO: Create a function that returns the license section of README
-  // If there is no license, return an empty string
-  function renderLicenseSection(addLicense, addLink) {
-    return ` 
-    ${renderLicenseBadge(addLicense)}
-    ${renderLicenseLink(addLink)}`
-  }
-  
   // TODO: Create a function to generate markdown for README
-  
   module.exports = response => {
     const { title, description, installation, technologies, usage, contributing, test, email, username, license } = {...response};
     return `
 # ${title}
+
+${renderLicenseBadge(response.license)}
 
 ## Table of Contents
 ### -[Licensing](#license)
@@ -55,11 +48,6 @@ function renderLicenseBadge(license) {
 ### -[Contributing Guidelines](#contributing)
 ### -[Testing](#test)
 ### -[Questions](#email)
-
-## License
-${response.license}
-${renderLicenseSection(response.license)}
-${renderLicenseSection(response.license)}
 
 ## Description
 ${response.description}
@@ -85,7 +73,13 @@ ${response.contributing}
 ${response.test}
   
 ## Questions
-### For any questions or concerns please contact me at
+### Please reach out with any questions or concerns!
 Github: https://github.com/${response.username}
-Email: ${response.email}`
-  }
+
+Email: ${response.email}
+
+## License
+This project is licensed under ${response.license}
+
+${renderLicenseLink(response.license)}`
+}
