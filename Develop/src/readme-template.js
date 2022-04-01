@@ -86,4 +86,3 @@ function renderLicenseBadge(license) {
       Email: ${response.email}
     `
   }
-  

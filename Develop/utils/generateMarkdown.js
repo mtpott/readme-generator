@@ -1,25 +1,9 @@
 const fs = require('fs');
-const readmeLocation = './dist/README.md';
 
-// TODO: Create a function to write README file
-const writeToFile = fileContent => {
-  return new Promise((resolve, reject) => {
-      fs.writeToFile(readmeLocation, fileContent, err => {
-          if (err) {
-              reject(err);
-              return;
-          }
-          resolve({
-              ok: true,
-              message: 'README created.'
-          });
-      });
-  });
-};
 
-const copyFile = () => {
+const readFile = () => {
   return new Promise((resolve, reject) => {
-    fs.copyFile(readmeLocation, fileContent, err => {
+    fs.readFile('./dist/README.md', (err, data) => {
       if (err) {
         reject(err);
         return;
@@ -32,4 +16,4 @@ const copyFile = () => {
   });
 };
 
-module.exports = { writeToFile, copyFile };
+module.exports = readFile;
