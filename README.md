@@ -1,3 +1,8 @@
-# Professional README Generator Starter Code
+# Professional README Generator
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+## Screencastify Tutorial
+### Please follow the link below to watch a walkthrough of how the README Generator works.
+https://drive.google.com/file/d/1X9gLzg70zcqMbf0jeZXDTd4R5c5jaTe4/view
+
+## Technologies
+This was built using Node.js.
