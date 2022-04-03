@@ -13,27 +13,27 @@
 ### -[Licensing](#license)
 
 ## Description
-Generate professional-level, quality README.md files for all of your projects!
+Generate READMEs
   
 ## Installation
 ### Instructions for Project Installation:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan nisl nec metus sagittis dictum. In enim lorem, finibus eget mi ac, pulvinar laoreet orci. Integer finibus velit vel felis lobortis, a consectetur augue lacinia. Nam faucibus, velit a lacinia posuere, urna enim aliquet nisi, aliquam sollicitudin magna justo in libero. 
+lorem ipsum
   
 ## Technologies
 ### Built With:
-JavaScript, ES6, Node
+JavaScript, ES5, ES6, Node
 
 ## Usage
 ### Information Regarding Project Usage:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan nisl nec metus sagittis dictum. In enim lorem, finibus eget mi ac, pulvinar laoreet orci. Integer finibus velit vel felis lobortis, a consectetur augue lacinia. Nam faucibus, velit a lacinia posuere, urna enim aliquet nisi, aliquam sollicitudin magna justo in libero. 
+lorem ipsum
 
 ## Contributing
 ### Information Regarding Contributing Guidelines:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan nisl nec metus sagittis dictum. In enim lorem, finibus eget mi ac, pulvinar laoreet orci. Integer finibus velit vel felis lobortis, a consectetur augue lacinia. Nam faucibus, velit a lacinia posuere, urna enim aliquet nisi, aliquam sollicitudin magna justo in libero. 
+lorem ipsum
   
 ## Test
 ### Information Regarding Testing for this Project:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan nisl nec metus sagittis dictum. In enim lorem, finibus eget mi ac, pulvinar laoreet orci. Integer finibus velit vel felis lobortis, a consectetur augue lacinia. Nam faucibus, velit a lacinia posuere, urna enim aliquet nisi, aliquam sollicitudin magna justo in libero. 
+lorem ipsum
   
 ## Questions
 ### Please reach out with any questions or concerns!
