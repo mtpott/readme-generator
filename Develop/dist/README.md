@@ -9,7 +9,7 @@
 ### -[Usage](#usage)
 ### -[Contributing Guidelines](#contributing)
 ### -[Testing](#test)
-### -[Questions](#email)
+### -[Questions](#questions)
 ### -[Licensing](#license)
 
 ## Description
@@ -21,7 +21,7 @@ lorem ipsum
   
 ## Technologies
 ### Built With:
-JavaScript, ES5, ES6, Node
+JavaScript, ES6, Node
 
 ## Usage
 ### Information Regarding Project Usage:
