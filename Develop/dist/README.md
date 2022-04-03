@@ -21,7 +21,7 @@ lorem ipsum
   
 ## Technologies
 ### Built With:
-JavaScript, ES6, Node
+JavaScript, ES5, ES6, Node
 
 ## Usage
 ### Information Regarding Project Usage:
