@@ -46,7 +46,7 @@ ${renderLicenseBadge(response.license)}
 ### -[Usage](#usage)
 ### -[Contributing Guidelines](#contributing)
 ### -[Testing](#test)
-### -[Questions](#email)
+### -[Questions](#questions)
 ### -[Licensing](#license)
 
 ## Description
