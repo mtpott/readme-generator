@@ -13,7 +13,7 @@
 ### -[Licensing](#license)
 
 ## Description
-generate READMEs
+Generate READMEs
   
 ## Installation
 ### Instructions for Project Installation:
@@ -27,11 +27,11 @@ JavaScript, ES6, Node
 ### Information Regarding Project Usage:
 lorem ipsum
 
-## Contributing Guidelines
+## Contributing
 ### Information Regarding Contributing Guidelines:
 lorem ipsum
   
-## Testing
+## Test
 ### Information Regarding Testing for this Project:
 lorem ipsum
   

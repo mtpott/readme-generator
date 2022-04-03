@@ -64,11 +64,11 @@ ${response.technologies.join(', ')}
 ### Information Regarding Project Usage:
 ${response.usage}
 
-## Contributing Guidelines
+## Contributing
 ### Information Regarding Contributing Guidelines:
 ${response.contributing}
   
-## Testing
+## Test
 ### Information Regarding Testing for this Project:
 ${response.test}
   
